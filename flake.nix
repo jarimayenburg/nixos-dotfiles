@@ -22,7 +22,7 @@
     nixosConfigurations = {
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/configuration.nix];
+        modules = [nixos/configuration.nix];
       };
     };
   };

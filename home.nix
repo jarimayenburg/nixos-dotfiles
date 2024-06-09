@@ -30,10 +30,27 @@
     username = "jari";
     homeDirectory = "/home/jari";
 
+    shellAliases = {
+      gs = "git status";
+      gA = "git add -A";
+      gc = "git commit -v --no-verify";
+      gP = "git pull";
+
+      k = "kubectl";
+      pk = "kubectl --context 03926-ivido";
+      h = "helm";
+      ph = "helm --kube-context 03926-ivido";
+
+      v = "nvim";
+      sudo = "sudo ";
+      tmux = "TERM=screen-256color tmux";
+      tempy = "cd $(mktemp -d)";
+    };
+
     packages = with pkgs; [
+      dmenu
       firefox
       fzf
-      dmenu
 
       (st.overrideAttrs {
         src = builtins.fetchTarball {
@@ -62,10 +79,24 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    defaultKeymap = "vicmd";
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+	src = pkgs.zsh-powerlevel10k;
+	file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+	src = lib.cleanSource ./config;
+	file = "p10k.zsh";
+      }
+    ];
+
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "taskwarrior" "zsh-completions" "bazel" "helm" ];
-      theme = "powerlevel10k/powerlevel10k";
+      plugins = [ "git" "taskwarrior" "bazel" "helm" ];
     };
   };
 
