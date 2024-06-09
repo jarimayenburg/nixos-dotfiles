@@ -129,10 +129,34 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    wget
+    alsa-lib
+    clang
+    clang-tools
+    cmake
     docker
+    gcc
+    gcc11
+    gdb
+    glibc_multi
     gnumake
+    go
+    jdk11
+    jdk17
+    jdk8
+    jdt-language-server
+    libxkbcommon
+    lldb
+    lua
+    nodejs
+    php
+    pkg-config
+    rust-analyzer
+    rustfmt
+    rustup
+    valgrind
+    vim
+    vscode-fhs
+    wasm-pack
   ];
 
   programs.zsh.enable = true;
