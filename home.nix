@@ -50,7 +50,6 @@
     packages = with pkgs; [
       dmenu
       firefox
-      fzf
 
       (st.overrideAttrs {
         src = builtins.fetchTarball {
@@ -79,7 +78,14 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    defaultKeymap = "vicmd";
+    defaultKeymap = "viins";
+
+    history = {
+      size = 10000;
+      save = 10000;
+      ignoreAllDups = true;
+      ignorePatterns = [ "ls" "ps" "history" ];
+    };
 
     plugins = [
       {
@@ -89,8 +95,13 @@
       }
       {
         name = "powerlevel10k-config";
-	src = lib.cleanSource ./config;
 	file = "p10k.zsh";
+	src = lib.cleanSource ./config;
+      }
+      {
+        name = "zsh-vi-mode";
+	file = "./share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+	src = pkgs.zsh-vi-mode;
       }
     ];
 
@@ -98,6 +109,12 @@
       enable = true;
       plugins = [ "git" "taskwarrior" "bazel" "helm" ];
     };
+  };
+
+  # Configuration for fzf
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   # Configuration for neovim
