@@ -31,7 +31,6 @@
     homeDirectory = "/home/jari";
 
     packages = with pkgs; [
-      zsh
       firefox
       fzf
       dmenu
@@ -56,6 +55,17 @@
       pull.rebase = true;
       init.defaultBranch = "master";
       core.autocrlf = "input";
+    };
+  };
+
+  # Configuration for zsh
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "taskwarrior" "zsh-completions" "bazel" "helm" ];
+      theme = "powerlevel10k/powerlevel10k";
     };
   };
 

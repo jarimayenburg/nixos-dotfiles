@@ -122,6 +122,7 @@
   users.users.jari = {
     isNormalUser = true;
     extraGroups = [ "jari" "wheel" "docker" "networkmanager" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };
 
@@ -133,6 +134,8 @@
     docker
     gnumake
   ];
+
+  programs.zsh.enable = true;
 
   # Enable the picom compositor
   services.picom.enable = true;
