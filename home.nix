@@ -78,7 +78,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    defaultKeymap = "viins";
+
+    initExtra = ''
+    bindkey -v
+    '';
 
     history = {
       size = 10000;
@@ -97,11 +100,6 @@
         name = "powerlevel10k-config";
         file = "p10k.zsh";
         src = lib.cleanSource ./config;
-      }
-      {
-        name = "zsh-vi-mode";
-        file = "./share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-        src = pkgs.zsh-vi-mode;
       }
     ];
 
