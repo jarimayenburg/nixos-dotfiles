@@ -54,11 +54,6 @@
     enable = true;
     userName = "Jari Maijenburg";
     userEmail = "jari.maijenburg@formelio.nl";
-    aliases = {
-      gs = "status";
-      gA = "add -A";
-      gc = "commit -v --no-verify";
-    };
     extraConfig = {
       pull.rebase = true;
       init.defaultBranch = "master";
