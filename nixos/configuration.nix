@@ -150,8 +150,6 @@
     nodejs
     php
     pkg-config
-    rust-analyzer
-    rustfmt
     rustup
     valgrind
     vim
