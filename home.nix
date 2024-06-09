@@ -43,7 +43,6 @@
 
       v = "nvim";
       sudo = "sudo ";
-      tmux = "TERM=screen-256color tmux";
       tempy = "cd $(mktemp -d)";
     };
 
@@ -132,6 +131,27 @@
     enable = true;
     defaultEditor = true;
     vimAlias = true;
+  };
+
+  # Configuration for tmux
+  programs.tmux = {
+    enable = true;
+    terminal = "screen-256color";
+    baseIndex = 1;
+    prefix = "C-a";
+    mouse = true;
+    reverseSplit = true;
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.gruvbox;
+        extraConfig = ''
+          set -g @tmux-gruvbox 'dark'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.sensible;
+      }
+    ];
   };
 
   # Nicely reload system units when changing configs
