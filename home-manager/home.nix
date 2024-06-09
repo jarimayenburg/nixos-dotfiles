@@ -29,10 +29,27 @@
   home = {
     username = "jari";
     homeDirectory = "/home/jari";
+
+    packages = with pkgs; [
+      git
+      neovim
+      zsh
+      firefox
+      fzf
+      dmenu
+
+      (st.overrideAttrs {
+        src = builtins.fetchTarball {
+          url = "https://github.com/jarimayenburg/st/archive/master.tar.gz";
+          sha256 = "sha256:1hjkdsh68kdi1clqh6wy0g04hwwfn8j1g259p1n7af4281d0y7gl";
+        };
+      })
+    ];
   };
 
   programs.home-manager.enable = true;
 
+  # Configuration for git
   programs.git = {
     enable = true;
     userName = "Jari Maijenburg";

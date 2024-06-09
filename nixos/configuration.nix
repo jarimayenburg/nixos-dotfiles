@@ -125,22 +125,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    git
     vim
     wget
-    firefox
-    neovim
-    git
     docker
-    fzf
-    dmenu
     gnumake
-
-    (st.overrideAttrs {
-      src = builtins.fetchTarball {
-        url = "https://github.com/jarimayenburg/st/archive/master.tar.gz";
-	sha256 = "sha256:1hjkdsh68kdi1clqh6wy0g04hwwfn8j1g259p1n7af4281d0y7gl";
-      };
-    })
   ];
 
   # Enable the picom compositor
