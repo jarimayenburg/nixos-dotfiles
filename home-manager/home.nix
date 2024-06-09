@@ -31,8 +31,6 @@
     homeDirectory = "/home/jari";
 
     packages = with pkgs; [
-      git
-      neovim
       zsh
       firefox
       fzf
@@ -59,6 +57,13 @@
       init.defaultBranch = "master";
       core.autocrlf = "input";
     };
+  };
+
+  # Configuration for neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
   };
 
   # Nicely reload system units when changing configs
