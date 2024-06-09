@@ -90,18 +90,18 @@
     plugins = [
       {
         name = "powerlevel10k";
-	src = pkgs.zsh-powerlevel10k;
-	file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
       {
         name = "powerlevel10k-config";
-	file = "p10k.zsh";
-	src = lib.cleanSource ./config;
+        file = "p10k.zsh";
+        src = lib.cleanSource ./config;
       }
       {
         name = "zsh-vi-mode";
-	file = "./share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-	src = pkgs.zsh-vi-mode;
+        file = "./share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+        src = pkgs.zsh-vi-mode;
       }
     ];
 
