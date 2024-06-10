@@ -177,6 +177,47 @@
     };
   };
 
+  # Configuration for sxhkd
+  services.sxhkd = {
+    enable = true;
+    keybindings = {
+      # Brightness control
+      "XF86MonBrightness{Down,Up}" = "xbacklight {-dec,-inc} 10";
+
+      # Volume control
+      "XF86AudioMute" = "amixer -q sset Master toggle && kill -s SIGUSR1 $(pgrep statusbard)";
+
+      "XF86Audio{Lower,Raise}Volume" = "amixer -q sset Master 5%{-,+} && kill -s SIGUSR1 $(pgrep statusbard)";
+
+      # Lock the screen
+      "super + shift + l" = "betterlockscreen -l";
+
+      # Change the wallpaper
+      "super + F7" = "pkill randwald; randwald -l &";
+
+      # Save the current wallpaper to the wallpaper folder
+      "super + shift + F7" = "savewal";
+
+      # Delete the current wallpaper from the wallpaper folder
+      "super + alt + shift + F7" = "savewal -d";
+
+      # Set a random local wallpaper permanently
+      "super + alt + F7" = "pkill randwald; randwal -l";
+
+      # Application shortcuts
+      "super + {w, q, s, c, g}" = "{firefox, qutebrowser, slack, slack, ghopen}";
+
+      # Tmux sessionizer
+      "super + o" = "st tms";
+
+      # Incognito browser window
+      "super + shift + w" = "firefox --private-window";
+
+      # Screenshots
+      "Print" = "maim -s | xclip -selection clipboard -t image/png";
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
