@@ -13,7 +13,7 @@
       inputs.home-manager.nixosModules.home-manager
 
       # Import all the settings that are the same across all hosts
-      ../../modules/common/common.nix
+      ../../modules/common
 
       # Set up my own account
       ../../modules/users/jari.nix
@@ -28,6 +28,7 @@
     };
   };
 
+  # Set this devices hostname
   networking.hostName = "redwood";
 
   # This option defines the first version of NixOS you have installed on this particular machine,
