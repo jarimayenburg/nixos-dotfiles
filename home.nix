@@ -47,6 +47,7 @@
     packages = with pkgs; [
       dmenu
       tmux-sessionizer
+      delta
 
       (st.overrideAttrs {
         src = builtins.fetchTarball {
@@ -69,7 +70,12 @@
     extraConfig = {
       pull.rebase = true;
       init.defaultBranch = "master";
-      core.autocrlf = "input";
+
+      core = {
+        editor = "nvim";
+        pager = "delta --dark";
+        whitespace = "trailing-space,space-before-tab";
+      };
     };
   };
 
