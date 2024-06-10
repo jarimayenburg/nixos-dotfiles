@@ -1,11 +1,12 @@
 { inputs, pkgs, ... }:
 {
   imports = [
-    ./fonts.nix
-    ./dwm.nix
-    ./sound.nix
     ./devtools.nix
     ./displays.nix
+    ./dwm.nix
+    ./fonts.nix
+    ./generic.nix
+    ./sound.nix
   ];
 
   # Allow unfree packages
