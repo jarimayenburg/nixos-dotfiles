@@ -4,13 +4,24 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  services.dwm-status = {
-    enable = true;
-    order = ["network" "backlight" "audio" "battery" "time"];
-    extraConfig = builtins.readFile (lib.cleanSource ../../config/dwm-status.toml);
-  };
+  config = {
+    services.upower = {
+      enable = true;
+    };
 
-  services.upower = {
-    enable = true;
+    systemd.user.services.dwm-status = {
+      enable = true;
+      description = "DWM status service";
+
+      partOf = [ "graphical-session.target" ];
+      wants = ["network.target"];
+      after = ["network.target"];
+
+      wantedBy = [ "graphical-session.target" ];
+
+      serviceConfig = {
+        ExecStart = "${pkgs.dwm-status}/bin/dwm-status ${../../config/dwm-status.toml}";
+      };
+    };
   };
 }

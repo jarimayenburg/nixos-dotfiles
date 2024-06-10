@@ -1,4 +1,5 @@
 separator = "    "
+order = ["network", "backlight", "audio", "battery", "time"]
                                                            
 [audio]
 mute = "󰖁"
