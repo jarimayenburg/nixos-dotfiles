@@ -4,30 +4,31 @@
     clang
     clang-tools
     cmake
+    dive
     docker
+    fd
     file
     gcc
     gcc11
     gdb
     glibc_multi
     gnumake
+    gnupg
     go
+    insomnia
     jdk11
     jdk17
     jdk8
     jdt-language-server
     kubectl
-    insomnia
     libxkbcommon
     lldb
     lua
-    ripgrep
-    fd
     nodejs
     php
     pinentry-curses
-    gnupg
     pkg-config
+    ripgrep
     rustup
     slack
     valgrind
