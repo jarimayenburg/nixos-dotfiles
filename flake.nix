@@ -17,12 +17,10 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#redwood
     nixosConfigurations = {
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [nixos/configuration.nix];
+        modules = [hosts/redwood/configuration.nix];
       };
     };
   };
