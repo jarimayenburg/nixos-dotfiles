@@ -11,15 +11,15 @@
       separator = "    "
 
       [audio]
-      mute = "ﱝ"
+      mute = "󰖁"
       template = "{ICO} {VOL}%"
-      icons = ["奄", "奔", "墳"]
+      icons = ["", "󰖀", "󰕾"]
       control = "Master"
 
       [backlight]
       device = "intel_backlight"
       template = "{ICO} {BL}%"
-      icons = ["", "", ""]
+      icons = ["󰃞", "󰃟", "󰃠"]
 
       [battery]
       enable_notifier = true
@@ -29,7 +29,7 @@
       notifier_critical = 10
       notifier_levels = [2, 5, 10, 15, 20]
       separator = " · "
-      icons = ["", "", "", "", "", "", "", "", "", "", ""]
+      icons = ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 
       [cpu_load]
       template = "{CL1} {CL5} {CL15}"
