@@ -21,6 +21,7 @@
 
       serviceConfig = {
         ExecStart = "${pkgs.dwm-status}/bin/dwm-status ${../../config/dwm-status.toml}";
+        Restart = "always";
       };
     };
   };
