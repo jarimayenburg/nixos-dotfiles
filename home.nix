@@ -8,13 +8,7 @@
   ...
 }: {
   # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
-  ];
+  imports = [];
 
   nixpkgs = {
     # Configure your nixpkgs instance
@@ -24,6 +18,9 @@
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
     };
+    overlays = [
+      inputs.nur.overlay
+    ];
   };
 
   home = {
@@ -48,7 +45,6 @@
 
     packages = with pkgs; [
       dmenu
-      firefox
       tmux-sessionizer
 
       (st.overrideAttrs {
@@ -164,6 +160,21 @@
   # Configuration for tmux-sessionizer
   xdg.configFile.tms = {
     source = ./config/tms;
+  };
+
+  # Configuration for firefox
+  programs.firefox = {
+    enable = true;
+    profiles = {
+      ${config.home.username} = {
+        isDefault = true;
+        name = "${config.home.username}";
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          bitwarden
+          ublock-origin
+        ];
+      };
+    };
   };
 
   # Nicely reload system units when changing configs
