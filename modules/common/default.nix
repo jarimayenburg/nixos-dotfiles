@@ -5,6 +5,7 @@
     ./dwm.nix
     ./sound.nix
     ./devtools.nix
+    ./displays.nix
   ];
 
   # Allow unfree packages
