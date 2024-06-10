@@ -89,6 +89,9 @@
 
     initExtra = ''
     bindkey -v
+
+    #  Kubectl autocompletion
+    source <(kubectl completion zsh)
     '';
 
     history = {
