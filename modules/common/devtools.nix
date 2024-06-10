@@ -29,5 +29,7 @@
     xorg.libXft
     xorg.libXinerama
     wasm-pack
+
+    slack
   ];
 }
