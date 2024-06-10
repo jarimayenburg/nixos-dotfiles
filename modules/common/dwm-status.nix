@@ -37,7 +37,7 @@
 
       [network]
       no_value = "NA"
-      template = "{ESSID} ({IPv4})"
+      template = "{ESSID}"
 
       [time]
       format = "%Y-%m-%d %H:%M:%S"
