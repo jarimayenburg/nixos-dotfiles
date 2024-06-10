@@ -5,6 +5,7 @@
     clang-tools
     cmake
     docker
+    file
     gcc
     gcc11
     gdb
@@ -25,10 +26,10 @@
     valgrind
     vim
     vscode-fhs
+    wasm-pack
     xorg.libX11.dev
     xorg.libXft
     xorg.libXinerama
-    wasm-pack
 
     slack
   ];
