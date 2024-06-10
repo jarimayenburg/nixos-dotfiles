@@ -17,6 +17,7 @@
     jdk8
     jdt-language-server
     kubectl
+    insomnia
     libxkbcommon
     lldb
     lua
