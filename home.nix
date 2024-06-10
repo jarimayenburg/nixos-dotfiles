@@ -49,6 +49,7 @@
     packages = with pkgs; [
       dmenu
       firefox
+      tmux-sessionizer
 
       (st.overrideAttrs {
         src = builtins.fetchTarball {
@@ -158,6 +159,11 @@
         plugin = tmuxPlugins.sensible;
       }
     ];
+  };
+
+  # Configuration for tmux-sessionizer
+  xdg.configFile.tms = {
+    source = ./config/tms;
   };
 
   # Nicely reload system units when changing configs
