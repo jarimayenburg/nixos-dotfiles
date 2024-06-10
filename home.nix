@@ -139,8 +139,14 @@
     terminal = "screen-256color";
     baseIndex = 1;
     prefix = "C-a";
-    mouse = true;
     reverseSplit = true;
+    mouse = true;
+    aggressiveResize = true;
+    clock24 = true;
+    escapeTime = 0;
+    historyLimit = 50000;
+    extraConfig = builtins.readFile (lib.cleanSource ./config/tmux.conf);
+
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.gruvbox;
