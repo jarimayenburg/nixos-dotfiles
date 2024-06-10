@@ -179,6 +179,9 @@
     };
   };
 
+  # Configuration for Chromium
+  programs.chromium.enable = true;
+
   # Configuration for sxhkd
   services.sxhkd = {
     enable = true;
