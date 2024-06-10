@@ -21,6 +21,8 @@
     libxkbcommon
     lldb
     lua
+    ripgrep
+    fd
     nodejs
     php
     pinentry-curses
