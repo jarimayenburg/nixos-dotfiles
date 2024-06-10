@@ -68,12 +68,14 @@
     userName = "Jari Maijenburg";
     userEmail = "jari.maijenburg@formelio.nl";
     extraConfig = {
+      commit.gpgsign = true;
+      user.signingKey = "838EBF03CC06F451";
+
       pull.rebase = true;
       init.defaultBranch = "master";
 
       core = {
         editor = "nvim";
-        pager = "delta --dark";
         whitespace = "trailing-space,space-before-tab";
       };
     };

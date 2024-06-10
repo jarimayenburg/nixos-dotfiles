@@ -22,6 +22,8 @@
     lua
     nodejs
     php
+    pinentry-curses
+    gnupg
     pkg-config
     rustup
     slack
@@ -34,4 +36,9 @@
     xorg.libXft
     xorg.libXinerama
   ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 }
