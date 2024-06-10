@@ -16,6 +16,7 @@
     jdk17
     jdk8
     jdt-language-server
+    kubectl
     libxkbcommon
     lldb
     lua
@@ -23,6 +24,7 @@
     php
     pkg-config
     rustup
+    slack
     valgrind
     vim
     vscode-fhs
@@ -30,7 +32,5 @@
     xorg.libX11.dev
     xorg.libXft
     xorg.libXinerama
-
-    slack
   ];
 }
