@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
     alsa-utils
@@ -7,42 +7,7 @@
   services.dwm-status = {
     enable = true;
     order = ["network" "backlight" "audio" "battery" "time"];
-    extraConfig = ''
-      separator = "    "
-
-      [audio]
-      mute = "󰖁"
-      template = "{ICO} {VOL}%"
-      icons = ["", "󰖀", "󰕾"]
-      control = "Master"
-
-      [backlight]
-      device = "intel_backlight"
-      template = "{ICO} {BL}%"
-      icons = ["󰃞", "󰃟", "󰃠"]
-
-      [battery]
-      enable_notifier = true
-      charging = ""
-      discharging = ""
-      no_battery = ""
-      notifier_critical = 10
-      notifier_levels = [2, 5, 10, 15, 20]
-      separator = " · "
-      icons = ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-
-      [cpu_load]
-      template = "{CL1} {CL5} {CL15}"
-      update_interval = 20
-
-      [network]
-      no_value = "NA"
-      template = "{ESSID}"
-
-      [time]
-      format = "%Y-%m-%d %H:%M:%S"
-      update_seconds = true
-      '';
+    extraConfig = builtins.readFile (lib.cleanSource ../../config/dwm-status.toml);
   };
 
   services.upower = {
