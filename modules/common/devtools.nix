@@ -38,8 +38,16 @@
     xorg.libX11.dev
     xorg.libXft
     xorg.libXinerama
+
+    (google-cloud-sdk.withExtraComponents( with google-cloud-sdk.components; [
+      gke-gcloud-auth-plugin
+    ]))
   ];
 
+  # Enable Docker
+  virtualisation.docker.enable = true;
+
+  # Enable GPG for e.g. signing commits
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-curses;
