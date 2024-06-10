@@ -29,6 +29,7 @@
     vim
     vscode-fhs
     wasm-pack
+    xclip
     xorg.libX11.dev
     xorg.libXft
     xorg.libXinerama
