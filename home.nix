@@ -90,8 +90,9 @@
     initExtra = ''
     bindkey -v
 
-    #  Kubectl autocompletion
-    source <(kubectl completion zsh)
+    if [[ -r "${pkgs.kubectl}" ]]; then
+      source <(kubectl completion zsh)
+    fi
     '';
 
     history = {
