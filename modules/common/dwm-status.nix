@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    alsa-utils
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   services.dwm-status = {
