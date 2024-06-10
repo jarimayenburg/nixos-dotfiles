@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./dwm-status.nix
+  ];
+
   services.displayManager = {
     defaultSession = "none+dwm";
     autoLogin = {

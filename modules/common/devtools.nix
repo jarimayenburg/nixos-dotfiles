@@ -25,6 +25,9 @@
     valgrind
     vim
     vscode-fhs
+    xorg.libX11.dev
+    xorg.libXft
+    xorg.libXinerama
     wasm-pack
   ];
 }
