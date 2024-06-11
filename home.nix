@@ -41,7 +41,7 @@
       v = "nvim";
       sudo = "sudo ";
       tempy = "cd $(mktemp -d)";
-      xc = "xclip";
+      xc = "xclip -selection clipboard";
     };
 
     packages = with pkgs; [
