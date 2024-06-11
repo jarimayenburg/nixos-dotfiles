@@ -42,12 +42,13 @@
       sudo = "sudo ";
       tempy = "cd $(mktemp -d)";
       xc = "xclip -selection clipboard";
+      r = "ranger";
     };
 
     packages = with pkgs; [
       dmenu
       tmux-sessionizer
-      delta
+      ranger
 
       (st.overrideAttrs {
         src = builtins.fetchTarball {
