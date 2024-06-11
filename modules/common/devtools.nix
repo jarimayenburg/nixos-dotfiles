@@ -20,6 +20,7 @@
     jdk17
     jdk8
     jdt-language-server
+    jq
     kubectl
     libxkbcommon
     lldb
