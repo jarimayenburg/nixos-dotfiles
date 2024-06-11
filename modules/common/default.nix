@@ -42,8 +42,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Enable ZSH
+  # Enable ZSH and make it the default
   programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Enable the picom compositor
   services.picom.enable = true;
