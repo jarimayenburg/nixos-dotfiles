@@ -25,6 +25,7 @@
     libxkbcommon
     lldb
     lua
+    maven
     nodejs
     php
     pinentry-curses
