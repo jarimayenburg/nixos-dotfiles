@@ -11,6 +11,7 @@
     gcc
     gcc11
     gdb
+    gh
     glibc_multi
     gnumake
     gnupg
