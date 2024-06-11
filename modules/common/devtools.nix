@@ -16,9 +16,7 @@
     gnupg
     go
     insomnia
-    jdk11
     jdk17
-    jdk8
     jdt-language-server
     jq
     kubectl
