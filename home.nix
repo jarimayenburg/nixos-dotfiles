@@ -43,6 +43,8 @@
       tempy = "cd $(mktemp -d)";
       xc = "xclip -selection clipboard";
       r = "ranger";
+
+      nix-shell = "nix-shell --run zsh";
     };
 
     packages = with pkgs; [
