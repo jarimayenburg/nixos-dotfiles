@@ -21,7 +21,6 @@
       # Configure keymap in X11
       xkb = {
         layout = "us";
-        options = "eurosign:e,caps:escape";
       };
 
       # Setup DWM as the window manager
