@@ -26,6 +26,7 @@
     lua
     maven
     nodejs
+    openssl
     php
     pinentry-curses
     pkg-config
