@@ -23,7 +23,10 @@
   time.timeZone = "Europe/Amsterdam";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [ "all" ];
+  };
 
   # Set TTY font size
   console = {
@@ -36,8 +39,13 @@
   # Enable networkmanager
   networking.networkmanager.enable = true;
 
-  # Enable CUPS for printing
+  # Enable CUPS for printing with autodetection
   services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
